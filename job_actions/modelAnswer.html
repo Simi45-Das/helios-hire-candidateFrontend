@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Results & Answer Sheets</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Main Container -->
+  <div class="max-w-4xl mx-auto mt-16 p-8 bg-white shadow-xl rounded-xl">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+         Answer Sheets
+    </h1>
+
+    <!-- Company Test List Section -->
+    <div class="space-y-8">
+
+      <!-- Test Result Item (Answer Sheet Available) -->
+      <div class="p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Company Name 1</span></h3>
+
+        <!-- Answer Sheet Download Section (Dynamically Visible) -->
+        <div class="mt-6">
+          <p class="text-gray-300">The answer sheet for this test has been uploaded by the company.</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300 ease-in-out">
+            Download Answer Sheet
+          </a>
+        </div>
+      </div>
+
+      <!-- Test Result Item (No Answer Sheet Available) -->
+      <div class="p-6 bg-gradient-to-r from-gray-500 to-gray-600 text-white rounded-xl hover:from-gray-600 hover:to-gray-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Company Name 2</span></h3>
+
+        <!-- No Answer Sheet Available Section -->
+        <div class="mt-6">
+          <p class="text-gray-300">No answer sheet available for download at this time.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

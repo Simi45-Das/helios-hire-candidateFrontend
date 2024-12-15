@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Upload</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function displayFileName(input, displayId) {
+      const file = input.files[0];
+      const displayElement = document.getElementById(displayId);
+      if (file) {
+        displayElement.textContent = `Selected File: ${file.name}`;
+        displayElement.classList.remove("text-red-500");
+        displayElement.classList.add("text-green-600");
+      } else {
+        displayElement.textContent = "No file selected.";
+        displayElement.classList.remove("text-green-600");
+        displayElement.classList.add("text-red-500");
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Resume Upload</h1>
+      <p class="text-lg">Submit your professional resume</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-10 flex-grow">
+    <form class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto space-y-8">
+      <fieldset class="border border-gray-300 p-4 rounded-lg">
+        <legend class="text-lg font-semibold text-gray-700">Resume</legend>
+        <div class="mt-4">
+          <label class="block text-sm font-medium text-gray-700" for="resumeUpload">Upload your resume:</label>
+          <!-- File input for resume -->
+          <input 
+            type="file" 
+            id="resumeUpload" 
+            name="file" 
+            accept="application/pdf" 
+            required 
+            onchange="displayFileName(this, 'resume-file-name')" 
+            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+          <p class="mt-1 text-sm text-gray-500">Only PDF files are allowed.</p>
+          <button 
+            class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none transition" 
+            type="button" 
+            id="upload-button"
+          >
+            Upload
+          </button>
+          <!-- Display selected file -->
+          <div id="resume-file-name" class="mt-2 text-sm text-red-500">No file selected.</div>
+        </div>
+      </fieldset>
+
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-blue-600 text-white py-4 w-full">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../personal_details/js_files/resume.js"></script>
+</body>
+</html>

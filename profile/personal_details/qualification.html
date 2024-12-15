@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Qualification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Function to add a new field group for qualifications
+    function addField(containerId) {
+      const container = document.getElementById(containerId);
+      const newField = document.createElement("div");
+      newField.className = "form-section space-y-4 bg-gray-50 p-4 rounded-lg shadow-sm";
+
+      newField.innerHTML = `
+        <label class="block text-sm font-medium">Degree:</label>
+        <input type="text" name="${containerId}[degree]" class="mt-1 p-2 w-full border rounded-lg" required>
+        
+        <label class="block text-sm font-medium">Institution:</label>
+        <input type="text" name="${containerId}[institution]" class="mt-1 p-2 w-full border rounded-lg" required>
+        
+        <label class="block text-sm font-medium">Year of Graduation:</label>
+        <input type="number" name="${containerId}[year]" min="1900" max="2099" step="1" class="mt-1 p-2 w-full border rounded-lg" required>
+        
+        <button type="button" onclick="removeField(this)" class="mt-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none">
+          Remove
+        </button>
+      `;
+      container.appendChild(newField);
+    }
+
+    // Function to remove a specific field group
+    function removeField(button) {
+      const fieldGroup = button.parentElement;
+      fieldGroup.remove();
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Add Qualification</h1>
+      <p class="text-lg">Share your academic background</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <form class="bg-white shadow-md rounded-lg p-6 max-w-xl mx-auto space-y-8">
+      <!-- Add Qualification Section -->
+      <fieldset class="border border-gray-300 p-4 rounded-lg">
+        <legend class="text-lg font-semibold text-gray-700">Add Qualification</legend>
+        <div class="space-y-8">
+          <!-- Graduation Section -->
+          <div>
+            <h2 class="text-gray-600 font-medium mb-4">Graduation</h2>
+            <div id="gradContainer" class="space-y-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+              <div class="form-section space-y-4">
+                <label class="block text-sm font-medium">Degree:</label>
+                <input type="text" name="graduation[degree]" class="mt-1 p-2 w-full border rounded-lg" required>
+
+                <label class="block text-sm font-medium">Institution:</label>
+                <input type="text" name="graduation[institution]" class="mt-1 p-2 w-full border rounded-lg" required>
+
+                <label class="block text-sm font-medium">Year of Graduation:</label>
+                <input type="number" name="graduation[year]" min="1900" max="2099" step="1" class="mt-1 p-2 w-full border rounded-lg" required>
+              </div>
+            </div>
+            <button type="button" onclick="addField('gradContainer')" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
+              Add More Graduation
+            </button>
+          </div>
+
+          <!-- Post-Graduation Section -->
+          <div>
+            <h2 class="text-gray-600 font-medium mb-4">Post Graduation</h2>
+            <div id="postGradContainer" class="space-y-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+              <div class="form-section space-y-4">
+                <label class="block text-sm font-medium">Post Graduation Degree:</label>
+                <input type="text" name="postGraduation[degree]" class="mt-1 p-2 w-full border rounded-lg" required>
+
+                <label class="block text-sm font-medium">Institution:</label>
+                <input type="text" name="postGraduation[institution]" class="mt-1 p-2 w-full border rounded-lg" required>
+
+                <label class="block text-sm font-medium">Year of Graduation:</label>
+                <input type="number" name="postGraduation[year]" min="1900" max="2099" step="1" class="mt-1 p-2 w-full border rounded-lg" required>
+              </div>
+            </div>
+            <button type="button" onclick="addField('postGradContainer')" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
+              Add More Post Graduation
+            </button>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+          Submit
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 w-full">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../profile/personal_details/js_files/qualification.js">
+
+  </script>
+</body>
+</html>

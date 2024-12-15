@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helios Hire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center text-white">
+    <div class="text-center space-y-10 p-6 max-w-3xl mx-auto">
+        <h1 class="text-6xl font-extrabold drop-shadow-lg">Welcome to <span class="text-yellow-300">Helios Hire</span></h1>
+        <p class="text-lg font-medium drop-shadow-lg">Your journey to finding the perfect opportunity starts here. Choose your role to proceed.</p>
+
+        <div class="flex justify-center gap-8">
+            <button id="recruiterBtn" class="w-44 py-4 bg-yellow-400 text-indigo-900 font-bold rounded-full shadow-lg hover:bg-yellow-300 hover:scale-110 transition-transform">
+                Recruiter
+            </button>
+
+            <button id="candidateBtn" class="w-44 py-4 bg-green-400 text-indigo-900 font-bold rounded-full shadow-lg hover:bg-green-300 hover:scale-110 transition-transform">
+                Candidate
+            </button>
+        </div>
+
+        <footer class="text-sm font-light mt-10 drop-shadow-lg">
+            © 2024 Helios Hire. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('recruiterBtn').addEventListener('click', () => {
+             window.location.href = '/recruiter-dashboard';
+        });
+
+        document.getElementById('candidateBtn').addEventListener('click', () => {
+            // Redirect to candidate page
+            window.location.href = '/candidate-dashboard';
+        });
+    </script>
+</body>
+</html>

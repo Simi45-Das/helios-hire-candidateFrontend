@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Main Container -->
+  <div class="max-w-5xl mx-auto mt-16 p-8 bg-white shadow-xl rounded-xl">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+      Explore Courses Launched by Companies
+    </h1>
+
+    <!-- Company List Section -->
+    <div id="course-list" class="space-y-8">
+      <!-- Example Company Card -->
+      <!-- Dynamically Generated -->
+      <div class="p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl shadow-lg hover:from-blue-600 hover:to-blue-700 transition transform hover:scale-105">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Innovative Learning</span></h3>
+        <button class="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-100 hover:text-blue-700 transition">
+          Explore All Courses
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Dynamic Content -->
+  <script>
+    // Mock data for companies offering courses
+    const companies = [
+      { name: "TechMasters" },
+      { name: "CodeCrafters" },
+      { name: "SkillUp" },
+      { name: "Innovative Learning" }
+    ];
+
+    // Dynamically render company cards
+    const courseList = document.getElementById("course-list");
+    companies.forEach(company => {
+      const companyElement = document.createElement("div");
+      companyElement.className = "p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl shadow-lg hover:from-blue-600 hover:to-blue-700 transition transform hover:scale-105";
+      companyElement.innerHTML = `
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">${company.name}</span></h3>
+        <button class="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-100 hover:text-blue-700 transition">
+          Explore All Courses
+        </button>
+      `;
+      courseList.appendChild(companyElement);
+    });
+  </script>
+
+</body>
+</html>

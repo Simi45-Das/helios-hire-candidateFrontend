@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Opportunities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Main Container -->
+  <div class="max-w-5xl mx-auto mt-16 p-8 bg-white shadow-xl rounded-xl">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+      Internship Opportunities
+    </h1>
+
+    <!-- Internship Opportunities List -->
+    <div id="internship-list" class="space-y-8">
+      <!-- Example Internship Post -->
+      <!-- Dynamically Generated -->
+      <div class="p-6 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl shadow-lg hover:from-green-600 hover:to-green-700 transition transform hover:scale-105">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Tech Innovations</span></h3>
+        <p class="text-lg mb-2">"We are looking for enthusiastic interns in web development. A great opportunity to learn and grow with us!"</p>
+        <p class="text-sm text-gray-200">Posted on: <span class="font-semibold">25th November 2024</span></p>
+        <button class="mt-4 px-6 py-2 bg-white text-green-600 font-semibold rounded-md hover:bg-gray-100 hover:text-green-700 transition">
+          Proceed
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Dynamic Content -->
+  <script>
+    // Mock data for internship posts
+    const internships = [
+      {
+        company: "AI Pioneers",
+        description: "Join us as a Data Science Intern to work on cutting-edge AI projects.",
+        date: "26th November 2024"
+      },
+      {
+        company: "Cloud Architects",
+        description: "We need interns to help us in cloud deployment and automation. Great exposure awaits!",
+        date: "25th November 2024"
+      }
+    ];
+
+    // Dynamically render internships
+    const internshipList = document.getElementById("internship-list");
+    internships.forEach(internship => {
+      const internshipElement = document.createElement("div");
+      internshipElement.className = "p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl shadow-lg hover:from-blue-600 hover:to-blue-700 transition transform hover:scale-105";
+      internshipElement.innerHTML = `
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">${internship.company}</span></h3>
+        <p class="text-lg mb-2">"${internship.description}"</p>
+        <p class="text-sm text-gray-200">Posted on: <span class="font-semibold">${internship.date}</span></p>
+        <button class="mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-100 hover:text-blue-700 transition">
+          Proceed
+        </button>
+      `;
+      internshipList.appendChild(internshipElement);
+    });
+  </script>
+
+</body>
+</html>

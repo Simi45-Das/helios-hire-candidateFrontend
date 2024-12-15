@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Update Your Profile</h1>
+      <p class="text-lg">Edit your professional details</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Contact Information -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Contact Information</h2>
+        <p class="text-gray-500 mt-2">Update your email, phone, and address.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="window.location.href='../profile/updateInfo/upcontact.html'">Edit</button>
+         
+      </div>
+
+      <!-- Impress Recruiter -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Impress Recruiter</h2>
+        <p class="text-gray-500 mt-2">Write a tagline that stands out.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="openModal('taglineModal')">Edit</button>
+      </div>
+
+      <!-- Projects -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Projects</h2>
+        <p class="text-gray-500 mt-2">Showcase your top projects.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="openModal('projectsModal')">Edit</button>
+      </div>
+
+      <!-- Resume -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Resume</h2>
+        <p class="text-gray-500 mt-2">Upload your latest resume.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="openModal('resumeModal')">Edit</button>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Social Media Links</h2>
+        <p class="text-gray-500 mt-2">Link your social profiles.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="openModal('socialMediaModal')">Edit</button>
+      </div>
+
+      <!-- Introduction Video -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold text-gray-700">Introduction Video</h2>
+        <p class="text-gray-500 mt-2">Upload a short intro video.</p>
+        <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          onclick="openModal('videoModal')">Edit</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modals -->
+  <div id="contactModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 shadow-lg max-w-md w-full">
+      <h2 class="text-xl font-semibold mb-4">Update Contact Information</h2>
+      <form id="contactForm">
+        <div>
+          <label for="email" class="block text-sm font-medium">Email:</label>
+          <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-lg">
+        </div>
+        <div class="mt-4">
+          <label for="phone" class="block text-sm font-medium">Phone:</label>
+          <input type="tel" id="phone" name="phone" class="mt-1 p-2 w-full border rounded-lg">
+        </div>
+        <div class="mt-4">
+          <label for="address" class="block text-sm font-medium">Address:</label>
+          <textarea id="address" name="address" rows="3" class="mt-1 p-2 w-full border rounded-lg"></textarea>
+        </div>
+        <div class="mt-6 text-right">
+          <button type="button" class="bg-gray-300 py-2 px-4 rounded-lg hover:bg-gray-400 transition"
+            onclick="closeModal('contactModal')">Cancel</button>
+          <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add modals for other sections similarly -->
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 w-full mt-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+    }
+  </script>
+</body>
+
+</html>

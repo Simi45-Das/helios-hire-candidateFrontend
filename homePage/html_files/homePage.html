@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helios Hire Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-purple-600">
+
+    <!-- Navbar -->
+    <nav class="bg-transparent text-white p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-4xl font-bold tracking-wider text-white">
+                <span class="text-yellow-400">Helios</span> Hire
+            </div>
+            <div class="space-x-8">
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">About</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Contact Us</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">See Reviews</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Give Reviews</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="container mx-auto my-10 p-12 bg-white bg-opacity-90 rounded-lg shadow-xl">
+        <h1 class="text-4xl font-semibold text-indigo-600 mb-6 text-center">
+            Welcome to Your <span class="text-yellow-500">Helios</span> Dashboard
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Profile Actions -->
+            <div class="p-8 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg shadow-xl hover:scale-105 transform transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Manage Your Profile</h2>
+                <ul class="space-y-4">
+                    <li><a href="../../profile/create_profile.html" class="hover:underline">Create Profile</a></li>
+                    <li><a href="../../profile/profile_view.html" class="hover:underline">See Profile</a></li>
+                    <li><a href="../../profile/editProfile.html" class="hover:underline">Edit Profile</a></li>
+                </ul>
+            </div>
+
+            <!-- Job Actions -->
+            <div class="p-8 bg-gradient-to-r from-purple-400 to-pink-500 text-white rounded-lg shadow-xl hover:scale-105 transform transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Your Career Journey</h2>
+                <ul class="space-y-4">
+                    <li><a href="../../job_actions/viewRank.html" class="hover:underline">See Ranks</a></li>
+                    <li><a href="../../job_actions/upcomingInterview.html" class="hover:underline">Upcoming Interviews</a></li>
+                    <li><a href="../../job_actions/applyJob.html" class="hover:underline">Apply for Job</a></li>
+                    <li><a href="../../job_actions/testResult.html" class="hover:underline">Test Result</a></li>
+                    <li><a href="../../job_actions/modelAnswer.html" class="hover:underline">See Model Answers</a></li>
+                </ul>
+            </div>
+
+            <!-- Notifications & Opportunities -->
+            <div class="p-8 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg shadow-xl hover:scale-105 transform transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Opportunities Await</h2>
+                <ul class="space-y-4">
+                    <li><a href="../../opportunities/recentPost.html" class="hover:underline">Recent Job Opportunities</a></li>
+                    <li><a href="../../opportunities/internship.html" class="hover:underline">Internship Opportunities</a></li>
+                    <li><a href="../../opportunities/joinCources.html" class="hover:underline">Join online course</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-10 text-center">
+            <a href="#"
+                class="px-6 py-3 bg-yellow-500 text-white text-lg font-semibold rounded-lg hover:bg-yellow-600 transition duration-300">
+                May Your Ambitions Soar and Your Success Be Limitless — The Future is Yours with Helios Hire!
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

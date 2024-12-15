@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Helios Hire</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Page Container -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Logo & Header -->
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Helios Hire</span>
+                </h1>
+                <p class="mt-3 text-gray-500">Empowering Your Career Journey. Join us to unlock amazing opportunities.</p>
+            </div>
+
+            <!-- Sign-Up Form -->
+            <div class="bg-white shadow-md rounded-lg px-8 py-10">
+                <form id="signup-form" class="space-y-6">
+
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <div class="mt-1">
+                            <input type="text" id="name" name="nameusr" placeholder="John Doe" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phnnumbr" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <div class="mt-1">
+                            <input type="number" id="phnnumbr" name="phnnum" placeholder="123-456-7890"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Number -->
+                    <div>
+                        <label for="whats_nbr" class="block text-sm font-medium text-gray-700">WhatsApp Number</label>
+                        <div class="mt-1">
+                            <input type="number" id="whats_nbr" name="whats_nbr" placeholder="WhatsApp: 123-456-7890"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <div class="mt-1">
+                            <input type="email" id="email" name="email" placeholder="youremail@example.com"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <div class="mt-1">
+                            <input type="password" id="password" name="password" placeholder="Your password"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg shadow-lg hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div id="success-message" class="hidden text-center text-green-500">
+                Registration successful! Check your email for User ID.
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center text-gray-500">
+                <p>Already have an account? 
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file (if needed) -->
+    <script src="../Auth_files/signUp_page.js"></script>
+</body>
+
+</html>

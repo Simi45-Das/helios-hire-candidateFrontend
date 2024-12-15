@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply to Companies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    // Function to fetch company names and IDs from the API and display them
+    async function fetchCompanies() {
+      try {
+        // Fetch data from the API endpoint
+        const response = await fetch("http://localhost:5001/api/company/get-all-company-names");
+        const companies = await response.json(); // Assuming response is in JSON format
+
+        const companyListContainer = document.getElementById("companyList");
+
+        // Check if there are companies to display
+        if (companies.length === 0) {
+          companyListContainer.innerHTML = `<p class="text-center text-lg text-gray-600 mb-8">No companies found.</p>`;
+        } else {
+          // Loop through each company and create a card
+          companies.forEach((company) => {
+            const companyCard = document.createElement("div");
+            companyCard.classList.add(
+              "bg-white", "border", "border-gray-200", "rounded-lg", 
+              "shadow-md", "overflow-hidden", "transform", "transition-all", 
+              "hover:scale-105", "hover:shadow-xl"
+            );
+
+            // Create the company card with a clickable button
+            companyCard.innerHTML = `
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">${company.companyName}</h3>
+                <button onclick="handleRedirect('${company.companyId}', '${encodeURIComponent(company.companyName)}')"
+                class="w-full text-center bg-blue-600 text-white py-2 px-6 rounded-md font-semibold hover:bg-blue-700 transition duration-300">
+                  Proceed
+                </button>
+              </div>
+            `;
+
+            companyListContainer.appendChild(companyCard);
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching companies:", error);
+        const companyListContainer = document.getElementById("companyList");
+        companyListContainer.innerHTML = `<p class="text-center text-lg text-red-600">Error fetching companies. Please try again later.</p>`;
+      }
+    }
+
+    // Handle redirect when button is clicked
+    function handleRedirect(companyId, companyName) {
+      console.log("Company ID:", companyId); // Check if the companyId is passed correctly
+      console.log("Company Name:", companyName); // Check if the companyName is passed correctly
+
+      // Store companyId and companyName in localStorage
+      // localStorage.setItem("companyId", companyId);
+      // localStorage.setItem("companyName", companyName);
+
+      // Using relative file path for local file system
+      const redirectUrl = `../company_templates/index.html?companyId=${companyId}&companyName=${companyName}`
+
+      console.log("Redirecting to:", redirectUrl); // Check the final URL
+      window.location.href = redirectUrl; // Perform the redirect
+    }
+
+    // Call fetchCompanies on page load
+    window.onload = fetchCompanies;
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto mt-16 p-8 bg-white shadow-lg rounded-lg">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-6">
+      Explore Career Opportunities
+    </h1>
+
+    <!-- Description Text -->
+    <p class="text-center text-lg text-gray-600 mb-8">
+      Browse through our curated list of companies and apply directly. Click "Proceed" to begin your journey with each opportunity.
+    </p>
+
+    <!-- Company List -->
+    <div id="companyList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <!-- Dynamic content will be injected here by JavaScript -->
+    </div>
+
+  </div>
+
+</body>
+</html>

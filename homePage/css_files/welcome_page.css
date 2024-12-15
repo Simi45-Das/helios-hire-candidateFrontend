@@ -1,0 +1,112 @@
+/* welcome_page.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e2b0ff, #bbd4f1);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+nav#nv1 {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+ul.navbar li {
+    margin: 0 20px;
+}
+
+ul.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+ul.navbar a:hover {
+    color: #e2b0ff;
+}
+
+#ta1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+button#profilebtn {
+    background: linear-gradient(45deg, #ff6b6b, #f54ea2);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button#profilebtn:hover {
+    background: linear-gradient(45deg, #f54ea2, #ff6b6b);
+}
+
+button#profilebtn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    ul.navbar {
+        flex-direction: column;
+    }
+
+    ul.navbar li {
+        margin: 10px 0;
+    }
+
+    #ta1 {
+        font-size: 1.2rem;
+        padding: 30px 10px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    button#profilebtn {
+        font-size: 0.9rem;
+        padding: 12px 25px;
+    }
+}

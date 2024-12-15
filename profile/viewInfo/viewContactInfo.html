@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Contact Information</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Contact Information</h1>
+      <p class="text-lg">View your contact details below</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <div class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto">
+      <div class="text-center">
+        <button id="loadContact" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+          Load Contact Information
+        </button>
+      </div>
+      <div id="contactInfo" class="mt-6 hidden">
+        <h2 class="text-xl font-semibold text-gray-700">Contact Information</h2>
+        <div class="mt-4">
+          <p><strong>Email:</strong> <span id="email"></span></p>
+          <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+          <p><strong>WhatsApp Number:</strong> <span id="whatsapp"></span></p>
+          <p><strong>Address:</strong> <span id="address"></span></p>
+        </div>
+      </div>
+      <div id="errorMessage" class="mt-6 hidden text-red-600 text-center">
+        <p>Unable to fetch contact information. Please try again later.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 w-full absolute bottom-0">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loadButton = document.getElementById('loadContact');
+      const contactInfoDiv = document.getElementById('contactInfo');
+      const errorMessageDiv = document.getElementById('errorMessage');
+
+      loadButton.addEventListener('click', async () => {
+        const userId = localStorage.getItem('userID');
+
+        if (!userId) {
+          alert('User not logged in. Please log in to view your contact information.');
+          return;
+        }
+
+        try {
+          // Use the GET method and append userId as a query parameter
+          const response = await fetch(`http://localhost:5000/api/contactInfo/viewcontact?userId=${userId}`);
+
+          if (response.ok) {
+            const data = await response.json();
+            contactInfoDiv.classList.remove('hidden');
+            errorMessageDiv.classList.add('hidden');
+
+            // Display the contact information
+            document.getElementById('email').textContent = data.email;
+            document.getElementById('phone').textContent = data.phone || 'Not Provided';
+            document.getElementById('whatsapp').textContent = data.whatsapp || 'Not Provided';
+            document.getElementById('address').textContent = data.address || 'Not Provided';
+          } else {
+            const error = await response.json();
+            errorMessageDiv.classList.remove('hidden');
+            contactInfoDiv.classList.add('hidden');
+          }
+        } catch (err) {
+          console.error('Error fetching the contact information:', err);
+          errorMessageDiv.classList.remove('hidden');
+          contactInfoDiv.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

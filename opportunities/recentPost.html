@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recent Job Posts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Main Container -->
+  <div class="max-w-5xl mx-auto mt-16 p-8 bg-white shadow-xl rounded-xl">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+      Recent Job Posts
+    </h1>
+
+    <!-- Job Post List -->
+    <div id="job-posts" class="space-y-8">
+      <!-- Example Job Post -->
+      <!-- Dynamically Generated -->
+      <div class="p-6 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl shadow-lg hover:from-teal-600 hover:to-teal-700 transition transform hover:scale-105">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Company Name</span></h3>
+        <p class="text-lg mb-2">"We are looking for a passionate web developer to join our team. Apply now to build the future with us!"</p>
+        <p class="text-sm text-gray-200">Posted on: <span class="font-semibold">25th November 2024</span></p>
+        <button class="mt-4 px-6 py-2 bg-white text-teal-600 font-semibold rounded-md hover:bg-gray-100 hover:text-teal-700 transition">
+          Proceed
+        </button>
+      </div>
+
+      <!-- Another Example Job Post -->
+      <div class="p-6 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-xl shadow-lg hover:from-indigo-600 hover:to-indigo-700 transition transform hover:scale-105">
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">Tech Innovators</span></h3>
+        <p class="text-lg mb-2">"Hiring for Software Engineers with expertise in AI and ML. Don't miss the chance to innovate with us!"</p>
+        <p class="text-sm text-gray-200">Posted on: <span class="font-semibold">23rd November 2024</span></p>
+        <button class="mt-4 px-6 py-2 bg-white text-indigo-600 font-semibold rounded-md hover:bg-gray-100 hover:text-indigo-700 transition">
+          Proceed
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: JavaScript for Dynamic Content -->
+  <script>
+    // Example dynamic addition of posts (mock data)
+    const posts = [
+      {
+        company: "NextGen Solutions",
+        content: "Join us as a Full Stack Developer and work on exciting projects that shape the tech world.",
+        date: "26th November 2024"
+      },
+      {
+        company: "CloudSphere",
+        content: "We're hiring DevOps Engineers to revolutionize cloud solutions. Apply now!",
+        date: "25th November 2024"
+      }
+    ];
+
+    const postContainer = document.getElementById("job-posts");
+    posts.forEach(post => {
+      const postElement = document.createElement("div");
+      postElement.className = "p-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl shadow-lg hover:from-purple-600 hover:to-purple-700 transition transform hover:scale-105";
+      postElement.innerHTML = `
+        <h3 class="text-xl font-semibold mb-4">Company: <span class="font-bold">${post.company}</span></h3>
+        <p class="text-lg mb-2">"${post.content}"</p>
+        <p class="text-sm text-gray-200">Posted on: <span class="font-semibold">${post.date}</span></p>
+        <button class="mt-4 px-6 py-2 bg-white text-purple-600 font-semibold rounded-md hover:bg-gray-100 hover:text-purple-700 transition">
+          Proceed
+        </button>
+      `;
+      postContainer.appendChild(postElement);
+    });
+  </script>
+
+</body>
+</html>

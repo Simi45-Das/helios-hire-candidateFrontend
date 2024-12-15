@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Experience</h1>
+      <p class="text-lg">Share your professional journey</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <form class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto space-y-8">
+      <!-- Experience Section -->
+      <fieldset class="border border-gray-300 p-4 rounded-lg">
+        <legend class="text-lg font-semibold text-gray-700">Experience</legend>
+        <div class="mt-4">
+          <!-- Add Experience -->
+          <label class="block text-sm font-medium text-gray-700" for="experience">Add experience (if any):</label>
+          <textarea 
+            id="experience" 
+            name="experience" 
+            rows="4" 
+            placeholder="Describe your work experience..." 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../personal_details/js_files/experience.js"></script>
+</body>
+</html>

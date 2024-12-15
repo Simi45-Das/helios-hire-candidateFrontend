@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Links</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Add Social Media Links</h1>
+      <p class="text-lg">Connect your profiles</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <form class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto space-y-8">
+      <!-- Social Media Links Section -->
+      <fieldset class="border border-gray-300 p-4 rounded-lg">
+        <legend class="text-lg font-semibold text-gray-700">Add Social Media Links</legend>
+        <div class="mt-4 space-y-4">
+          <label class="block text-sm font-medium text-gray-700" for="linkedIn">LinkedIn:</label>
+          <input 
+            type="url" 
+            id="linkedIn" 
+            name="linkedIn_link" 
+            placeholder="https://linkedin.com/in/your-profile" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+
+          <label class="block text-sm font-medium text-gray-700" for="github">GitHub:</label>
+          <input 
+            type="url" 
+            id="github" 
+            name="github_link" 
+            placeholder="https://github.com/your-profile" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+
+          <label class="block text-sm font-medium text-gray-700" for="youtube">YouTube:</label>
+          <input 
+            type="url" 
+            id="youtube" 
+            name="youtube_link" 
+            placeholder="https://youtube.com/your-channel" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+
+          <label class="block text-sm font-medium text-gray-700" for="instagram">Instagram:</label>
+          <input 
+            type="url" 
+            id="instagram" 
+            name="instagram_link" 
+            placeholder="https://instagram.com/your-profile" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+
+          <label class="block text-sm font-medium text-gray-700" for="facebook">Facebook:</label>
+          <input 
+            type="url" 
+            id="facebook" 
+            name="facebook_link" 
+            placeholder="https://facebook.com/your-profile" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+
+          <label class="block text-sm font-medium text-gray-700" for="otherPlatform">Other Platform:</label>
+          <input 
+            type="url" 
+            id="otherPlatform" 
+            name="otherPlatform_link" 
+            placeholder="https://otherplatform.com/your-profile" 
+            class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+          >
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 w-full">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../personal_details/js_files/socialMedia.js"></script>
+</body>
+</html>

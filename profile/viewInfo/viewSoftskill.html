@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Soft Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="fetchSoftSkills.js" defer></script> <!-- JS File -->
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Your Soft Skills</h1>
+      <p class="text-lg">View your rated soft skills</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 flex-grow">
+    <div id="displaySoftSkills" class="mt-6 text-center">
+      <!-- Loading state -->
+      <p class="text-gray-500">Fetching your soft skills...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="../viewInfo/js_files/viewSoftskill.js"></script>
+</body>
+</html>

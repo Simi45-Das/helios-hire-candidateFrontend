@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Personal Information</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Your Personal Information</h1>
+    
+    <!-- Loading Indicator -->
+    <div id="loading" class="flex justify-center items-center">
+      <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+      </svg>
+    </div>
+    
+    <!-- Personal Info Content -->
+    <div id="personal-info" class="hidden">
+      <div class="mb-4">
+        <span class="font-semibold text-gray-700">First Name:</span>
+        <span id="firstName" class="text-gray-600"></span>
+      </div>
+      <div class="mb-4">
+        <span class="font-semibold text-gray-700">Last Name:</span>
+        <span id="lastName" class="text-gray-600"></span>
+      </div>
+      <div class="mb-4">
+        <span class="font-semibold text-gray-700">Date of Birth:</span>
+        <span id="dob" class="text-gray-600"></span>
+      </div>
+      <div class="mb-4">
+        <span class="font-semibold text-gray-700">Gender:</span>
+        <span id="gender" class="text-gray-600"></span>
+      </div>
+      
+    </div>
+    
+    <!-- Error Message -->
+    <div id="error-message" class="hidden bg-red-100 text-red-700 p-4 rounded mb-4">
+      <p id="error-text"></p>
+    </div>
+    
+    
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="../viewInfo/js_files/viewPersonalinfo.js"></script>
+</body>
+</html>
