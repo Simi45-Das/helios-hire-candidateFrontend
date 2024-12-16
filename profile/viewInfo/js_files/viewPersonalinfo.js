@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dobEl = document.getElementById("dob");
   const genderEl = document.getElementById("gender");
 
-  const authToken = localStorage.getItem("authToken");
+  const authToken = localStorage.getItem("token");
   const userID = localStorage.getItem("userID");
 
   if (!authToken || !userID) {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchPersonalInfo() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/viewInfo/getUser/personalInfo?userId=${encodeURIComponent(
+        `http://localhost:5000/api/personalInfo/getUser?userId=${encodeURIComponent(
           userID
         )}`,
         {

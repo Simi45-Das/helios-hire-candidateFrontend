@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tagline and Position Form</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../personal_details/js_files/tagLine.js"></script> <!-- Link to JavaScript file -->
 </head>
 <body class="bg-gray-100 font-sans min-h-screen flex flex-col">
   <!-- Header -->
@@ -17,22 +18,13 @@
 
   <!-- Main Content -->
   <main class="container mx-auto mt-10 flex-grow">
-    <form class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto">
+    <form id="tagline-form" class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto">
       <!-- Add Your Tagline -->
       <fieldset class="border border-gray-300 p-4 rounded-lg">
         <legend class="text-lg font-semibold text-gray-700">Add Your Tagline</legend>
         <div class="mt-4">
           <label for="tagline" class="block text-sm font-medium">Tagline:</label>
           <textarea id="tagline" name="tagline" rows="2" placeholder="Write your catchy tagline here..." class="mt-1 p-2 w-full border rounded-lg"></textarea>
-        </div>
-      </fieldset>
-
-      <!-- Add Your Position -->
-      <fieldset class="border border-gray-300 p-4 rounded-lg mt-6">
-        <legend class="text-lg font-semibold text-gray-700">Add Your Position</legend>
-        <div class="mt-4">
-          <label for="positions" class="block text-sm font-medium">Positions:</label>
-          <textarea id="positions" name="positions" rows="2" placeholder="Add your position(s) here..." class="mt-1 p-2 w-full border rounded-lg"></textarea>
         </div>
       </fieldset>
 
@@ -51,5 +43,7 @@
       <p>&copy; 2024 Your Name. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script src="../personal_details/js_files/tagLine.js"></script>
 </body>
 </html>

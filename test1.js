@@ -22,8 +22,7 @@ async function loginUser(event) {
       const result = await response.json();
       alert("Login successful!");
 
-      localStorage.setItem("userID", userID); // Save userID in local storage
-      localStorage.setItem("token", result.token); // Also save the token for authorization
+      localStorage.setItem("token", result.token);
 
       window.location.href = "../homePage/html_files/homePage.html";
     } else {
@@ -32,7 +31,7 @@ async function loginUser(event) {
     }
   } catch (error) {
     console.error("Error during login:", error);
-    alert("An error occurred during login. Please try again.");
+    alert("An error occurred during login.Please try again");
   }
 }
 

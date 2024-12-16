@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect to PDF</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .redirect-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .redirect-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button class="redirect-btn" id="redirectButton">Open PDF</button>
+
+  <script>
+    document.getElementById("redirectButton").addEventListener("click", function() {
+      // Replace with your PDF URL
+      const pdfUrl = "https://drive.google.com/file/d/16zWr6O_SfXXYGdBUTljknuLaJrH16KiK/view?pli=1";
+      window.location.href = pdfUrl;
+    });
+  </script>
+</body>
+</html>
